@@ -18,11 +18,11 @@ class TestCase002(unittest.TestCase):
         self.driver.get("https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en")
         page = HomePage(self.driver)
         page.get_search_box().click()
-        time.sleep(3)
+        self.driver.implicitly_wait(3)
         topic = page.get_featured_topic()
         topic_name = topic.text
         topic.click()
-        time.sleep(3)
+        self.driver.implicitly_wait(3)
         assert topic_name in self.driver.find_element(By.XPATH, "//h2[@class='OJMBqe']").text
 
     def test_2_2(self):
@@ -30,8 +30,8 @@ class TestCase002(unittest.TestCase):
         self.driver.get("https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en")
         page = HomePage(self.driver)
         page.get_search_box().click()
-        time.sleep(3)
+        self.driver.implicitly_wait(3)
         topic = page.get_in_the_news()
         topic.click()
-        time.sleep(3)
+        self.driver.implicitly_wait(3)
 

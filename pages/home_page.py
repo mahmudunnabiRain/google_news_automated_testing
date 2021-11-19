@@ -1,6 +1,6 @@
 
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
+from locators.locators_home_page import LocatorsHomePage
 
 
 class HomePage:
@@ -8,11 +8,11 @@ class HomePage:
         self.driver = driver
 
     def get_search_box(self):
-        return self.driver.find_element(By.XPATH, "//input[@class='Ax4B8 ZAGvjd']")
+        return self.driver.find_element(*LocatorsHomePage.SEARCH_BOX)
 
     def get_featured_topic(self):
-        return self.driver.find_element(By.XPATH, "//div[@class='MkjOTb oKubKe p1eHnf' and @data-hinttext='COVID-19']")
+        return self.driver.find_element(*LocatorsHomePage.FEATURED_TOPIC)
 
     def get_in_the_news(self):
-        return self.driver.find_element(By.XPATH, "//div[@class='MkjOTb oKubKe p1eHnf' and @data-hinttext='NFL']")
+        return self.driver.find_element(*LocatorsHomePage.IN_THE_NEWS)
 

@@ -13,4 +13,4 @@ class TestCase001(unittest.TestCase):
     def test(self):
         # test case 001
         self.driver.get("https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en")
-        assert "Google News" in self.driver.title
+        assert "Google News" == self.driver.title
